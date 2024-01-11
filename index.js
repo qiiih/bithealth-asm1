@@ -7,6 +7,16 @@ const inputExp = document.getElementById("input-exp")
 const inputEmail = document.getElementById("input-email")
 const btnSubmit = document.getElementById("btn-submit")
 
+function clrForm() {
+    inputName.value = ""
+    inputRole.value = ""
+    inputAvail.value = ""
+    inputAge.value = ""
+    inputLocation.value = ""
+    inputExp.value = ""
+    inputEmail.value = ""
+}
+
 btnSubmit.addEventListener("click", (e) => {
     const profile = {
         name : inputName.value,
@@ -17,7 +27,6 @@ btnSubmit.addEventListener("click", (e) => {
         exp : inputExp.value,
         email : inputEmail.value,
     }
-    if(profile.name.trim()=="" || profile.role.trim()=="" || profile.avail.trim()=="" || profile.age.trim()=="" || profile.loc.trim()=="" || profile.exp.trim()=="" || profile.email.trim()=="") {
-        alert("Please fill the form completely")
-    } else console.log(profile);
+    console.log(profile);
+    clrForm()
 })
