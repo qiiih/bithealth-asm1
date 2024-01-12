@@ -7,6 +7,14 @@ const inputExp = document.getElementById("input-exp")
 const inputEmail = document.getElementById("input-email")
 const btnSubmit = document.getElementById("btn-submit")
 
+const profileName = document.getElementById("profile-name")
+const profileRole = document.getElementById("profile-role")
+const profileAvail = document.getElementById("profile-availability")
+const profileAge = document.getElementById("profile-age")
+const profileLocation = document.getElementById("profile-location")
+const profileExp = document.getElementById("profile-exp")
+const profileEmail = document.getElementById("profile-email")
+
 function clrForm() {
     inputName.value = ""
     inputRole.value = ""
@@ -15,6 +23,16 @@ function clrForm() {
     inputLocation.value = ""
     inputExp.value = ""
     inputEmail.value = ""
+}
+
+function changeProfile(profile) {
+    profileName.innerText = profile.name 
+    profileRole.innerText = profile.role
+    profileAvail.innerText = profile.avail
+    profileAge.innerText = profile.age
+    profileLocation.innerText = profile.loc
+    profileExp.innerText = profile.exp
+    profileEmail.innerText = profile.email
 }
 
 btnSubmit.addEventListener("click", (e) => {
@@ -27,6 +45,6 @@ btnSubmit.addEventListener("click", (e) => {
         exp : inputExp.value,
         email : inputEmail.value,
     }
-    console.log(profile);
+    changeProfile(profile)
     clrForm()
 })
